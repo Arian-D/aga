@@ -5,7 +5,7 @@ description = "Arian's Goofy Agents"
 readme = "README.org"
 requires-python = ">=3.13"
 dependencies = [
-  "beeai-framework[duckduckgo, wikipedia]"
+  "beeai-framework[duckduckgo, wikipedia, mcp]"
 ]
 
 [tool.pyright]

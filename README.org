@@ -8,6 +8,6 @@ While not strict, here are a few broad guidelines to adhere when creating
 things:
 - Containerization :: Try to make it work on all machines that can run
   Linux OCI containers.
-- Pipeability :: Make these work in a standard posix shell or nushell pipeline.
+- Pipeability :: Make these work in a standard posix shell or nushell pipelines.
 - Self-containment :: Shebangmaxx. =env -S= isn't posix, and neither
   is anything written here.
