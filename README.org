@@ -1,6 +1,8 @@
 #+title: Arian's Goofy Agents
+#+startup: fold
 
 Experimental little agents to make my existence obsolete.
+
 
 * Scratchpad
 ** Requirements
@@ -11,3 +13,34 @@ things:
 - Pipeability :: Make these work in a standard posix shell or nushell pipelines.
 - Self-containment :: Shebangmaxx. =env -S= isn't posix, and neither
   is anything written here.
+** Ideas
+- Abstract away agent classes so that it's easy to make custom ones
+- Make a big ahh collection of MCPs, and possibly custom tooling like
+  - HTTP calls
+  - REPL access to niche languages
+- Pre-commit
+- Publish a ghcr container(s) once things start to look up
+** Agent ideas
+*** TODO The differ
+This is a coding agent that does not change any files. Here's how it
+works:
+1. The agent (containerized, maybe even sub-containerized) has
+   readonly access to some mounted volume from the host.
+2. The agent makes a hard clone of the directory elsewhere (think
+   =mktemp=)
+3. The agent dynamically decides what MCPs to use. Since MCPs are
+   context-hungry and resource-intensive, they'd have to be
+   cherrypicked based on the situation (i.e. you'd wanna hook into
+   playwright for a webapp, but you wouldn't need it for a C project).
+4. The agent reasons and acts accordingly, making changes to the clone
+   as needed.
+5. Once it is deemed ready, the agent creates a =diff= (not git diff)
+   and prints it to the stdout.
+**** Cons
+- Oneshot
+- Filters zoomers who can't live without a bloated JSslop forge
+*** TODO The thinker
+*** TODO The doer
+- Email
+- Website
+- Message
